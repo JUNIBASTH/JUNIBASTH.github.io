@@ -1,0 +1,164 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor principal con Flexbox */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /*max-width: 1200px;  Ancho máximo del contenido */
+    margin: 20px auto; /* Centra el contenido horizontalmente */
+    padding: 20px;
+}
+
+/* Menú de la izquierda */
+.menu-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    background-color: #1f1b2e;
+    padding: 20px;
+    color: white;
+    overflow-y: auto; /* Permite desplazamiento si el contenido del menú es largo */
+}
+
+.menu-left ul {
+    list-style-type: none;
+}
+
+.menu-left ul li {
+    margin: 10px 0;
+}
+
+/* Contenido central */
+.content {
+    margin-left: 20%; /* Ancho del menú izquierdo */
+    margin-right: 20%; /* Ancho del menú derecho */
+    padding: 20px;
+}
+
+/* Menú de la derecha */
+.menu-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    background-color: #1f1b2e;
+    padding: 20px;
+    border-left: 2px solid #ccc;
+    overflow-y: auto; /* Permite desplazamiento si es necesario */
+    color: white;
+}
+
+.menu-right ul {
+    list-style-type: none;
+}
+
+.menu-right ul li {
+    margin: 10px 0;
+}
+
+
+header {
+    text-align: center;
+    background-color: #1f1b2e;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    border-bottom: 2px solid #4ca8af;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.job {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+li::before {
+    content: "•";
+    color: #4ca8af;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Los divs se apilan verticalmente */
+    }
+
+    .menu-left, .content, .menu-right {
+        width: 100%; /* Los divs ocupan el ancho completo */
+    }
+
+    .menu-right {
+        border-left: none; /* Quita el borde en pantallas pequeñas */
+        border-top: 2px solid #ccc; /* Añade borde superior en lugar de lateral */
+    }
+}
+
+
+/* Quitar los colores y subrayados de los enlaces */
+
+
+a {
+    color: inherit; /* Hereda el color del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Estilo de enlace visitado (opcional, para mantener la consistencia) */
+a:visited {
+    color: inherit; /* Mantiene el mismo color después de visitar el enlace */
+}
+
+/* Estilo de enlace al pasar el cursor sobre él (hover) */
+a:hover {
+    color: inherit; /* Mantiene el mismo color al pasar el cursor */
+    text-decoration: none; /* Elimina el subrayado al pasar el cursor */
+}
+
+/* Estilo de enlace activo (mientras se hace clic) */
+a:active {
+    color: inherit; /* Mantiene el mismo color mientras se hace clic */
+    text-decoration: none; /* Elimina el subrayado mientras se hace clic */
+}
